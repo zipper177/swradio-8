@@ -104,13 +104,13 @@ QString s;
 	   return;
 	}
 	if (number >= 10) {
-	   s. push_back ('0' + number / 10);
-	   s. push_back ('0' + number % 10);
+	   s. push_back (QChar ('0' + number / 10));
+	   s. push_back (QChar ('0' + number % 10));
 	   insertString (target, pos, s);
 	   return;
 	}
 	s. push_back (' ');
-	s. push_back ('0' + number);
+	s. push_back (QChar ('0' + number));
 	insertString (target, pos, s);
 }
 

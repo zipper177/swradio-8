@@ -130,13 +130,13 @@ int	k;
 	fax_displayImage	(theImage -> getImage ());
 //
 //
-	connect (colorSetter, SIGNAL (activated (const QString &)),
+	connect (colorSetter, SIGNAL (textActivated (const QString &)),
 	         this, SLOT (fax_setColor (const QString &)));
-	connect (iocSetter, SIGNAL (activated (const QString &)),
+	connect (iocSetter, SIGNAL (textActivated (const QString &)),
 	         this, SLOT (fax_setIOC (const QString &)));
-	connect (modeSetter, SIGNAL (activated (const QString &)),
+	connect (modeSetter, SIGNAL (textActivated (const QString &)),
 	         this, SLOT (fax_setMode (const QString &)));
-	connect (phaseSetter, SIGNAL (activated (const QString &)),
+	connect (phaseSetter, SIGNAL (textActivated (const QString &)),
 	         this, SLOT (fax_setPhase (const QString &)));
 	connect (resetButton, SIGNAL (clicked (void)),
 	         this, SLOT (reset (void)));
@@ -146,7 +146,7 @@ int	k;
 	         this, SLOT (fax_setsaveSingle (void)));
 	connect (correctButton, SIGNAL (clicked ()),
 	         this, SLOT (fax_setCorrection ()));
-	connect (cheatButton, SIGNAL (clicked (void)),
+	connect (cheatButton, SIGNAL (clicked ()),
 	         this, SLOT (fax_setCheat ()));
 	h		= s -> value ("fax_modeSetter", "FM"). toString ();
 	k		= modeSetter	-> findText (h);

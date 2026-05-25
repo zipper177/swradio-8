@@ -100,13 +100,13 @@
 	         this, SLOT (set_ifgainReduction (int)));
 	connect (lnaGainSetting, SIGNAL (valueChanged (int)),
 	         this, SLOT (set_lnagainReduction (int)));
-	connect (agcControl, SIGNAL (stateChanged (int)),
+	connect (agcControl, SIGNAL (checkStateChanged (int)),
 	         this, SLOT (set_agcControl (int)));
 	connect (ppmControl, SIGNAL (valueChanged (int)),
 	         this, SLOT (set_ppmControl (int)));
-	connect (amPortSelector, SIGNAL (activated (const QString &)),
+	connect (amPortSelector, SIGNAL (textActivated (const QString &)),
 	         this, SLOT (set_amPortSelect (const QString &)));
-	connect (biasT_selector, SIGNAL (stateChanged (int)),
+	connect (biasT_selector, SIGNAL (checkStateChanged (int)),
 	         this, SLOT (set_biasT (int)));
 //
 	filter	= new decimatingFIR (inputRate / outputRate * 5 - 1,
@@ -304,7 +304,7 @@ int	sdrplayHandler_v3::set_antennaSelect (int sdrDevice) {
 	int k	= antennaSelector -> findText (setting);
 	if (k >= 0) 
 	   antennaSelector -> setCurrentIndex (k);
-	connect (antennaSelector, SIGNAL (activated (const QString &)),
+	connect (antennaSelector, SIGNAL (textActivated (const QString &)),
 	         this, SLOT (set_selectAntenna (const QString &)));
 	return k == 2 ? 'C' : k == 1 ? 'B' : 'A';
 }

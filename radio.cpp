@@ -121,9 +121,9 @@ int	res	= 1;
 
 QString	FrequencytoString (quint64 freq) {
 	if (freq < 10)
-	   return QString ('0' + (uint8_t)(freq % 10));
+	   return QString (QChar ('0' + (uint8_t)(freq % 10)));
 	return 
-	   FrequencytoString (freq / 10). append (QString ('0' + (uint8_t)(freq % 10)));
+	   FrequencytoString (freq / 10). append (QChar ('0' + (uint8_t)(freq % 10)));
 }
 
 	RadioInterface::RadioInterface (QSettings	*sI,
@@ -271,19 +271,19 @@ QString	FrequencytoString (quint64 freq) {
 	}
 	audioHandler -> selectDefaultDevice ();
 
-        connect (decoderTable, SIGNAL (activated (const QString &)),
+        connect (decoderTable, SIGNAL (textActivated (const QString &)),
                  this, SLOT (selectDecoder (const QString &)));
 
         mykeyPad                = new keyPad (this);
-        connect (freqButton, SIGNAL (clicked (void)),
-                 this, SLOT (handle_freqButton (void)));
+        connect (freqButton, SIGNAL (clicked ()),
+                 this, SLOT (handle_freqButton ()));
 
-	connect (middleButton, SIGNAL (clicked (void)),
-	         this, SLOT (set_inMiddle (void)));
+	connect (middleButton, SIGNAL (clicked ()),
+	         this, SLOT (set_inMiddle ()));
 
 	bandSelector	-> addItem ("4000");
 	bandSelector	-> addItem ("fax");
-	connect (bandSelector, SIGNAL (activated (const QString &)),
+	connect (bandSelector, SIGNAL (textActivated (const QString &)),
 	         this, SLOT (setBand (const QString &)));
 
 	connect (mouse_Inc, SIGNAL (valueChanged (int)),
@@ -292,14 +292,14 @@ QString	FrequencytoString (quint64 freq) {
         connect (streamOutSelector, SIGNAL (activated (int)),
                  this, SLOT (setStreamOutSelector (int)));
 
-	connect (AGC_select, SIGNAL (activated(const QString&) ),
+	connect (AGC_select, SIGNAL (textActivated(const QString&) ),
 	         this, SLOT (set_AGCMode (const QString&) ) );
 
 	connect (agc_thresholdSlider, SIGNAL (valueChanged (int)),
 	         this, SLOT (set_agcThresholdSlider (int)));
 
-	connect (freqSave, SIGNAL (clicked (void)),
-                 this, SLOT (set_freqSave (void)));
+	connect (freqSave, SIGNAL (clicked ()),
+                 this, SLOT (set_freqSave ()));
 
         myList  = new programList (this, stationList);
         myList  -> show ();
@@ -811,8 +811,8 @@ void	RadioInterface::set_mouseIncrement (int inc) {
 }
 
 void	RadioInterface::wheelEvent (QWheelEvent *e) {
-	adjustFrequency_hz ((e -> delta () > 0) ?
-	                        mouseIncrement : -mouseIncrement);
+//	adjustFrequency_hz ((e -> delta () > 0) ?
+//	                        mouseIncrement : -mouseIncrement);
 }
 
 //////////////////////////////////////////////////////////////////

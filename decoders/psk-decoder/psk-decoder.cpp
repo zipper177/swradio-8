@@ -90,13 +90,13 @@
 	psk_setFilterDegree	(pskFilterDegreeTrigger	-> value ());
 	pskText			= QString ();
 
-	connect	(pskAfconTrigger, SIGNAL (activated (const QString &)),
+	connect	(pskAfconTrigger, SIGNAL (textActivated (const QString &)),
 	         this, SLOT (psk_setAfcon (const QString &)));
-	connect (pskReverseTrigger, SIGNAL (activated (const QString &)),
+	connect (pskReverseTrigger, SIGNAL (textActivated (const QString &)),
 	         this, SLOT (psk_setReverse (const QString &)));
 	connect (pskSquelchLevelTrigger, SIGNAL (valueChanged (int)),
 	         this, SLOT (psk_setSquelchLevel (int)));
-	connect (pskModeTrigger, SIGNAL (activated (const QString &)),
+	connect (pskModeTrigger, SIGNAL (textActivated (const QString &)),
 	         this, SLOT (psk_setMode (const QString &)));
 	connect (pskFilterDegreeTrigger, SIGNAL (valueChanged (int)),
 	         this, SLOT (psk_setFilterDegree (int)));
@@ -162,11 +162,11 @@ void	pskDecoder::setup_pskDecoder	(int32_t rate) {
 	pskPhaseDisplay	-> setScaleArc	(-180.0, 180.0);
 	needle		= new QwtDialSimpleNeedle (
 	                          QwtDialSimpleNeedle::Arrow, true, Qt::red,
-	                          QColor (Qt::yellow). light(130));
+	                          QColor (Qt::yellow));
 	pskPhaseDisplay	-> setNeedle (needle);
 }
 
-void	pskDecoder::psk_setup (void) {
+void	pskDecoder::psk_setup () {
 
 	if (!pskAfcon) {
 	   psk_IF	= PSK_IF;

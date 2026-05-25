@@ -533,7 +533,7 @@ QString result;
 	while (index < 72) {
 	   uint8_t sym = getBits (m_in, index, 4);
 	   index += 4;
-	   result. push_back (sym > 0 ? table_2 [sym] : 0);
+	   result. push_back (sym > 0 ? table_2 [sym] : QChar (0));
 	}
 	return "type 0.5: " + result;
 }

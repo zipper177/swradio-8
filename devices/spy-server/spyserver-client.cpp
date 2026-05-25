@@ -126,7 +126,7 @@ QList<QHostAddress> ipAddressesList = QNetworkInterface::allAddresses();
 	   ipAddress = QHostAddress (QHostAddress::LocalHost).toString();
 
 	spyServer_settings	-> beginGroup ("SPYSERVERVER_SETTINGS");
-	ipAddress	= spyServer_settings -> value ("remote-server", ipAddress). toInt ();
+	ipAddress	= spyServer_settings -> value ("remote-server", ipAddress). toString ();
 	spyServer_settings	-> endGroup ();
 	hostLineEdit. setText (ipAddress);
 

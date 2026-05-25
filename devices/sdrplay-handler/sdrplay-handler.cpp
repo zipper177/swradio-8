@@ -358,9 +358,9 @@ ULONG APIkeyValue_length = 255;
 	         this, SLOT (set_ifgainReduction (int)));
 	connect (lnaGainSetting, SIGNAL (valueChanged (int)),
 	         this, SLOT (set_lnagainReduction (int)));
-	connect (agcControl, SIGNAL (stateChanged (int)),
+	connect (agcControl, SIGNAL (checkStateChanged (int)),
 	         this, SLOT (agcControl_toggled (int)));
-	connect (debugControl, SIGNAL (stateChanged (int)),
+	connect (debugControl, SIGNAL (checkStateChanged (int)),
 	         this, SLOT (debugControl_toggled (int)));
 	connect (ppmControl, SIGNAL (valueChanged (int)),
 	         this, SLOT (set_ppmControl (int)));

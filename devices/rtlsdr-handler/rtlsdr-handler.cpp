@@ -232,11 +232,11 @@ QString	temp;
 	                                     outputRate / 2,
 	                                     inputRate,
 	                                     inputRate / outputRate);
-	connect (combo_gain, SIGNAL (activated (const QString &)),
+	connect (combo_gain, SIGNAL (textActivated (const QString &)),
 	         this, SLOT (setExternalGain (const QString &)));
 	connect (f_correction, SIGNAL (valueChanged (int)),
 	         this, SLOT (setCorrection (int)));
-	connect (checkAgc, SIGNAL (stateChanged (int)),
+	connect (checkAgc, SIGNAL (checkStateChanged (int)),
 	         this, SLOT (setAgc (int)));
 //
 //	since the connections are made, the settings will trigger

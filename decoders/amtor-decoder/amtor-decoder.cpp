@@ -183,13 +183,13 @@ int16_t	k;
 	set_amtorMessage	(amtorMessage -> currentText ());
 	amtorSettings	-> endGroup ();
 
-	connect (amtorAfconButton, SIGNAL (activated (const QString &)),
+	connect (amtorAfconButton, SIGNAL (textActivated (const QString &)),
 	         this, SLOT (set_amtorAfcon (const QString &)));
-	connect (amtorReverseButton, SIGNAL (activated (const QString &)),
+	connect (amtorReverseButton, SIGNAL (textActivated (const QString &)),
 	         this, SLOT (set_amtorReverse (const QString &)));
-	connect (amtorFecErrorButton, SIGNAL (activated (const QString &)),
+	connect (amtorFecErrorButton, SIGNAL (textActivated (const QString &)),
 	         this, SLOT (set_amtorFecError (const QString &)));
-	connect (amtorMessage, SIGNAL (activated (const QString &)),
+	connect (amtorMessage, SIGNAL (textActivated (const QString &)),
 	         this, SLOT (set_amtorMessage (const QString &)));
 	amtorTextstring		= QString ();
 }

@@ -107,21 +107,21 @@ QString	temp;
 	rttyText		= QString ();
 //	The connects
 //
-	connect (rttyBaudrateSelect, SIGNAL (activated (const QString &)),
+	connect (rttyBaudrateSelect, SIGNAL (textActivated (const QString &)),
 	         this, SLOT (set_rttyBaudrate (const QString &)));
-	connect (rttyWidthSelect, SIGNAL (activated (const QString &)),
+	connect (rttyWidthSelect, SIGNAL (textActivated (const QString &)),
 	         this, SLOT (set_rttyShift (const QString &)));
-	connect (rttyParitySelect, SIGNAL (activated (const QString &)),
+	connect (rttyParitySelect, SIGNAL (textActivated (const QString &)),
 		 this, SLOT (set_rttyParity (const QString &)));
-	connect (rttyMsbSelect,    SIGNAL (activated (const QString &)),
+	connect (rttyMsbSelect,    SIGNAL (textActivated (const QString &)),
 		 this, SLOT (set_rttyMsb   (const QString &)));
-	connect (rttyNbitsTrigger,  SIGNAL (activated (const QString &)),
+	connect (rttyNbitsTrigger,  SIGNAL (textActivated (const QString &)),
 		 this, SLOT (set_rttyNbits (const QString &)));
-	connect (rttyStopbitsTrigger, SIGNAL (activated (const QString &)),
+	connect (rttyStopbitsTrigger, SIGNAL (textActivated (const QString &)),
 		 this, SLOT (set_rttyStopbits (const QString &)));
-	connect (rttyReverseTrigger, SIGNAL (activated (const QString &)),
+	connect (rttyReverseTrigger, SIGNAL (textActivated (const QString &)),
 		 this, SLOT (set_rttyReverse (const QString &)));
-	connect (rttyAfconTrigger, SIGNAL (activated (const QString &)),
+	connect (rttyAfconTrigger, SIGNAL (textActivated (const QString &)),
 		 this, SLOT (set_rttyAfcon (const QString &)));
 }
 

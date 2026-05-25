@@ -93,11 +93,11 @@
 	         this, SLOT (handle_identityButton ()));
 	connect (pskReporterButton, SIGNAL (clicked ()),
 	         this, SLOT (handle_pskReporterButton ()));
-	connect (presetFrequencies, SIGNAL (activated (const QString &)),
+	connect (presetFrequencies, SIGNAL (textActivated (const QString &)),
 	         this, SLOT (handle_presetFrequencies (const QString &)));
 	connect (this, SIGNAL (setFrequency (quint64)),
 	         mr, SLOT (setFrequency (quint64)));
-	connect (cq_selector, SIGNAL (activated (const QString &)),
+	connect (cq_selector, SIGNAL (textActivated (const QString &)),
 	         this, SLOT (handle_cq_selector (const QString &)));
 	show_pskStatus (false);
 	teller		= 0;
